@@ -1,11 +1,20 @@
 
-def Twosum(a1: list, num):
-    for i in range(len(a1) - 1):
-        for j in range(i + 1,len(a1)):
-            if num == a1[i] + a1[j]:
-                return i, j
+def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        h = {}
+        for i, num in enumerate(nums):
+            n = target - num
+            if n not in h:
+                h[num] = i
+            else:
+                return [h[n], i]
+
 
 a = [4,3,6,9]
 
-p1 = Twosum(a, 9)
+p1 = twosum(a, 9)
 print(p1)
